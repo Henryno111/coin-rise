@@ -1,0 +1,47 @@
+---
+id: 0
+name: CoinRise Mainnet Deployment
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://localhost:18443"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - requirement-publish:
+            contract-id: coinrise-vault
+            remap-sender: deployer
+            remap-principals:
+              deployer: deployer
+            cost: 100000
+            path: contracts/coinrise-vault.clar
+            
+    - id: 1
+      transactions:
+        - requirement-publish:
+            contract-id: coinrise-core
+            remap-sender: deployer
+            remap-principals:
+              deployer: deployer
+            cost: 150000
+            path: contracts/coinrise-core.clar
+            
+    - id: 2
+      transactions:
+        - requirement-publish:
+            contract-id: coinrise-rewards
+            remap-sender: deployer
+            remap-principals:
+              deployer: deployer
+            cost: 120000
+            path: contracts/coinrise-rewards.clar
+            
+    - id: 3
+      transactions:
+        - requirement-publish:
+            contract-id: coinrise-governance
+            remap-sender: deployer
+            remap-principals:
+              deployer: deployer
+            cost: 180000
+            path: contracts/coinrise-governance.clar

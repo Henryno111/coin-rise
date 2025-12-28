@@ -1,13 +1,25 @@
 [project]
 name = "coin-rise-contracts"
-description = ""
+description = "CoinRise - Collaborative staking platform for earning rewards"
 authors = []
 telemetry = true
 cache_dir = "./.cache"
 
-# [contracts.counter]
-# path = "contracts/counter.clar"
-# epoch = "latest"
+[contracts.coinrise-vault]
+path = "contracts/coinrise-vault.clar"
+epoch = "latest"
+
+[contracts.coinrise-core]
+path = "contracts/coinrise-core.clar"
+epoch = "latest"
+
+[contracts.coinrise-rewards]
+path = "contracts/coinrise-rewards.clar"
+epoch = "latest"
+
+[contracts.coinrise-governance]
+path = "contracts/coinrise-governance.clar"
+epoch = "latest"
 
 [repl.analysis]
 passes = ["check_checker"]
