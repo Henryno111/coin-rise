@@ -1,0 +1,39 @@
+---
+id: 0
+name: Mainnet deployment
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.blockstack.com:8332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: coinrise-vault
+            expected-sender: SPD7WQ5ZTDXV45D3ZCY00N1WTRF106SH9XA0D979
+            cost: 44930
+            path: contracts/coinrise-vault.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: coinrise-core
+            expected-sender: SPD7WQ5ZTDXV45D3ZCY00N1WTRF106SH9XA0D979
+            cost: 82930
+            path: contracts/coinrise-core.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: coinrise-governance
+            expected-sender: SPD7WQ5ZTDXV45D3ZCY00N1WTRF106SH9XA0D979
+            cost: 89970
+            path: contracts/coinrise-governance.clar
+            anchor-block-only: true
+            clarity-version: 4
+        - contract-publish:
+            contract-name: coinrise-rewards
+            expected-sender: SPD7WQ5ZTDXV45D3ZCY00N1WTRF106SH9XA0D979
+            cost: 78580
+            path: contracts/coinrise-rewards.clar
+            anchor-block-only: true
+            clarity-version: 4
+      epoch: "3.3"
